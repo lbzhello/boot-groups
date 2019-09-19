@@ -6,6 +6,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>mvc</module>
+        <module>example</module>
+        <module>test</module>
+        <module>dubbo-provider</module>
+        <module>dubbo-consumer</module>
     </modules>
 
     <parent>
@@ -17,9 +21,21 @@
 
     <groupId>boot-groups</groupId>
     <artifactId>boot-groups</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${groups.version}</version>
 
     <name>groups</name>
     <description>java stack group</description>
+
+    <properties>
+        <groups.version>1.0-SNAPSHOT</groups.version>
+        <mvc.version>${groups.version}</mvc.version>
+        <example.version>${groups.version}</example.version>
+        <test.version>${groups.version}</test.version>
+
+        <dubbo.version>2.7.3</dubbo.version>
+        <dubbo-provider.version>${groups.version}</dubbo-provider.version>
+        <dubbo-consumer.version>${groups.version}</dubbo-consumer.version>
+
+    </properties>
 
 </project>

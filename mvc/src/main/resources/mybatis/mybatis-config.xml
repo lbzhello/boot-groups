@@ -22,6 +22,6 @@
     </settings>
     <mappers>
         <!-- 将包内的映射器接口实现全部注册为映射器 -->
-        <package name="xyz.lius.javastack.mapper"/>
+        <package name="xyz.lius.mvc.mapper"/>
     </mappers>
 </configuration>
