@@ -10,6 +10,7 @@
         <module>test</module>
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
+        <module>dubbo-api</module>
     </modules>
 
     <parent>
@@ -27,15 +28,21 @@
     <description>java stack group</description>
 
     <properties>
+        <!--base-->
+        <java.version>12</java.version>
+
         <groups.version>1.0-SNAPSHOT</groups.version>
         <mvc.version>${groups.version}</mvc.version>
         <example.version>${groups.version}</example.version>
         <test.version>${groups.version}</test.version>
 
         <dubbo.version>2.7.3</dubbo.version>
+        <dubbo-api.version>${groups.version}</dubbo-api.version>
         <dubbo-provider.version>${groups.version}</dubbo-provider.version>
         <dubbo-consumer.version>${groups.version}</dubbo-consumer.version>
 
+        <!---->
+        <curator.version>4.2.0</curator.version>
     </properties>
 
 </project>
