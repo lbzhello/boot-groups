@@ -9,16 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>example</artifactId>
-    <version>${example.version}</version>
-
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>${javassist.version}</version>
-        </dependency>
-    </dependencies>
-
+    <artifactId>algorithm</artifactId>
+    <version>${algorithm.version}</version>
 </project>

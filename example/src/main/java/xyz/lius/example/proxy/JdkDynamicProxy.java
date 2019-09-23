@@ -19,8 +19,8 @@ public class JdkDynamicProxy<T> implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("JdkDynamicProxy: before");
-        method.invoke(target, args);
+        Object rst = method.invoke(target, args);
         System.out.println("JdkDynamicProxy: after");
-        return null;
+        return rst;
     }
 }

@@ -1,8 +1,8 @@
-package xyz.lius.mvc;
+package xyz.lius.algorithm;
 
 import java.util.Arrays;
 
-public class AlgorithmTest {
+public class Algorithm {
     public int[][] merge(int[][] intervals) {
         if (intervals == null) return null;
 
@@ -118,7 +118,7 @@ public class AlgorithmTest {
     }
 
     public static void main(String[] args) {
-        AlgorithmTest test = new AlgorithmTest();
+        Algorithm test = new Algorithm();
         int[][] merge = test.merge(new int[][]{new int[]{1, 3}, new int[]{2, 6}, new int[]{8, 10}, new int[]{15, 18}});
         System.out.println(merge);
         System.out.println(test.valid("internationalization", "i12i6"));

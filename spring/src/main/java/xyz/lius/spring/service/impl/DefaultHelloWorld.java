@@ -1,11 +1,11 @@
-package xyz.lius.mvc.bean.impl;
+package xyz.lius.spring.service.impl;
 
-import xyz.lius.mvc.bean.HelloBean;
+import xyz.lius.spring.service.HelloWorld;
 
-public class DefaultHelloBean implements HelloBean {
+public class DefaultHelloWorld implements HelloWorld {
     private String message;
 
-    public DefaultHelloBean(String message) {
+    public DefaultHelloWorld(String message) {
         this.message = message;
     }
 

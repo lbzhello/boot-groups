@@ -1,5 +1,5 @@
 package xyz.lius.test.example;
 
-public class ExampleTest {
+public class Example {
 
 }
