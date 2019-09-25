@@ -35,30 +35,14 @@
         <groups.version>1.0-SNAPSHOT</groups.version>
 <!--        <junit.version>5.3.1</junit.version>-->
 
-        <spring.web.version>2.1.8.RELEASE</spring.web.version>
-
         <spring.version>5.1.9.RELEASE</spring.version>
 
         <aspectj.version>1.9.4</aspectj.version>
 
-        <!-- mvc -->
-        <mvc.version>${groups.version}</mvc.version>
-
-        <!-- example -->
-        <example.version>${groups.version}</example.version>
         <javassist.version>3.25.0-GA</javassist.version>
-
-        <!-- test -->
-        <test.version>${groups.version}</test.version>
-
-        <!-- algorithm -->
-        <algorithm.version>${groups.version}</algorithm.version>
 
         <!-- dubbo -->
         <dubbo.version>2.7.3</dubbo.version>
-        <dubbo-api.version>${groups.version}</dubbo-api.version>
-        <dubbo-provider.version>${groups.version}</dubbo-provider.version>
-        <dubbo-consumer.version>${groups.version}</dubbo-consumer.version>
         <curator.version>4.2.0</curator.version>
     </properties>
 
