@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>boot-groups</groupId>
-            <artifactId>example</artifactId>
+            <artifactId>demo</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
