@@ -19,7 +19,7 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>mvc</module>
+        <module>web</module>
         <module>example</module>
         <module>test</module>
         <module>spring</module>
