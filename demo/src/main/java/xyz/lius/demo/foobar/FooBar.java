@@ -1,4 +1,4 @@
-package xyz.lius.example.foobar;
+package xyz.lius.demo.foobar;
 
 public interface FooBar {
     void foo();

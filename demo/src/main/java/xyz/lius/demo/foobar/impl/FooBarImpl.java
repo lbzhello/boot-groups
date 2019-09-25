@@ -1,6 +1,6 @@
-package xyz.lius.example.foobar.impl;
+package xyz.lius.demo.foobar.impl;
 
-import xyz.lius.example.foobar.FooBar;
+import xyz.lius.demo.foobar.FooBar;
 
 public class FooBarImpl implements FooBar {
 

@@ -1,4 +1,4 @@
-package xyz.lius.example.proxy;
+package xyz.lius.demo.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

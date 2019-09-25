@@ -1,9 +1,9 @@
 import org.junit.jupiter.api.Test;
-import xyz.lius.example.foobar.FooBar;
-import xyz.lius.example.foobar.impl.FooBarImpl;
-import xyz.lius.example.proxy.JdkDynamicProxy;
+import xyz.lius.demo.foobar.FooBar;
+import xyz.lius.demo.foobar.impl.FooBarImpl;
+import xyz.lius.demo.proxy.JdkDynamicProxy;
 
-public class ExampleTest {
+public class DemoTest {
     public static void main(String[] args) {
 
     }

@@ -20,7 +20,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>web</module>
-        <module>example</module>
+        <module>demo</module>
         <module>test</module>
         <module>spring</module>
         <module>algorithm</module>
