@@ -14,7 +14,7 @@
     <artifactId>boot-groups</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>groups</name>
+    <name>boot-groups</name>
     <description>java stack group</description>
 
     <packaging>pom</packaging>
@@ -22,11 +22,9 @@
         <module>mvc</module>
         <module>example</module>
         <module>test</module>
-        <module>dubbo-provider</module>
-        <module>dubbo-consumer</module>
-        <module>dubbo-api</module>
         <module>spring</module>
         <module>algorithm</module>
+        <module>dubbo</module>
     </modules>
 
     <properties>
