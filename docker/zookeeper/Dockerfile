@@ -1,10 +1,10 @@
 FROM liubaozhu/ubuntu
 
-WORKDIR /app/zookeeper
-RUN mkdir -p /app/zookeeper
+WORKDIR /home/zookeeper
+RUN mkdir -p /home/zookeeper
 
 ADD . .
 
-RUN bash /app/zookeeper/build.sh
+RUN bash /home/zookeeper/build.sh
 
-CMD [ "bash", "/app/zookeeper/start.sh" ]
+CMD [ "sh", "/home/zookeeper/start.sh" ]

@@ -11,4 +11,4 @@ services:
       - 2181:2181
     volumes:
       - /data/zookeeper:/tmp/zookeeper
-    command: ["bash", "-c", "/app/zookeeper/start.sh"]
+    command: ["sh", "-c", "/home/zookeeper/start.sh"]
