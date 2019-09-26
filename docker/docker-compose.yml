@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  zookeeper:
+    image: liubaozhu/zookeeper
+    #depends_on:
+    # - ubuntu
+    # build: .
+    ports:
+      - 2181:2181
+    volumes:
+      - /data/zookeeper:/tmp/zookeeper
+    command: ["sh", "-c", "/home/zookeeper/start.sh"]
+
+    db:
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: 123456
