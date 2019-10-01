@@ -3,15 +3,15 @@ package xyz.lius.web.entity;
 import java.sql.Timestamp;
 
 public class HelloWorld {
-    private String helloWorldId;
+    private int helloWorldId;
     private String message;
     private Timestamp timestamp;
 
-    public String getHelloWorldId() {
+    public int getHelloWorldId() {
         return helloWorldId;
     }
 
-    public void setHelloWorldId(String helloWorldId) {
+    public void setHelloWorldId(int helloWorldId) {
         this.helloWorldId = helloWorldId;
     }
 
