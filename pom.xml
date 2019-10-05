@@ -15,7 +15,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>caiwei</name>
-    <description>采薇 web 系统</description>
+    <description>采薇后台系统</description>
 
     <packaging>pom</packaging>
     <modules>
