@@ -1,9 +1,9 @@
-package xyz.lius.spring;
+package xyz.lius.demo.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import xyz.lius.spring.service.HelloWorld;
-import xyz.lius.spring.config.JavaConfig;
+import xyz.lius.demo.spring.config.JavaConfig;
+import xyz.lius.demo.spring.service.HelloWorld;
 
 
 public class AnnotationApplication {

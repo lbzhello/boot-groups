@@ -1,4 +1,4 @@
-package xyz.lius.spring.aop;
+package xyz.lius.demo.spring.aop;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class AopProxyTest {
-    @Pointcut("execution(* xyz.lius.spring.service.*.*(..))")
+    @Pointcut("execution(* xyz.lius.demo.spring.service.*.*(..))")
     public void pointcut() {
     }
 

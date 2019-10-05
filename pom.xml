@@ -22,7 +22,6 @@
         <module>web</module>
         <module>demo</module>
         <module>test</module>
-        <module>spring</module>
         <module>algorithm</module>
         <module>dubbo</module>
         <module>util</module>

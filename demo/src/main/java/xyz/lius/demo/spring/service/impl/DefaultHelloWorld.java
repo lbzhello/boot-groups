@@ -1,6 +1,6 @@
-package xyz.lius.spring.service.impl;
+package xyz.lius.demo.spring.service.impl;
 
-import xyz.lius.spring.service.HelloWorld;
+import xyz.lius.demo.spring.service.HelloWorld;
 
 public class DefaultHelloWorld implements HelloWorld {
     private String message;
