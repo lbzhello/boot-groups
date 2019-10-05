@@ -24,6 +24,7 @@
         <module>test</module>
         <module>dubbo</module>
         <module>util</module>
+        <module>api</module>
     </modules>
 
     <properties>
