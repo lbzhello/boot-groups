@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import xyz.lius.demo.foobar.FooBar;
-import xyz.lius.demo.foobar.impl.FooBarImpl;
+import xyz.lius.demo.foobar.Foo;
+import xyz.lius.demo.foobar.impl.FooImpl;
 import xyz.lius.demo.proxy.JdkDynamicProxy;
 
 public class DemoTest {
@@ -10,9 +10,8 @@ public class DemoTest {
 
     @Test
     public void test() {
-        FooBar fooBar = new JdkDynamicProxy<FooBar>(new FooBarImpl()).getProxy();
-        fooBar.foo();
-        fooBar.bar();
+        Foo foo = new JdkDynamicProxy<Foo>(new FooImpl()).getProxy();
+        foo.foo();
     }
 
 }

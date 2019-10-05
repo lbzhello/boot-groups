@@ -1,4 +1,4 @@
-package xyz.lius.algorithm;
+package xyz.lius.demo.algorithm;
 
 import java.util.Arrays;
 
