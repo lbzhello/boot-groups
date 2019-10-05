@@ -5,9 +5,16 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import xyz.lius.web.entity.HelloWorld;
+import xyz.lius.web.entity.User;
 import xyz.lius.web.mapper.HelloWorldMapper;
 import xyz.lius.web.mapper.UserMapper;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/hello")
@@ -28,11 +35,10 @@ public class HelloWorldController {
         throw new Exception("未知请求！");
     }
 
-    @RequestMapping("/{message}")
-    public String hello(@PathVariable("message") String message) {
-//        List<HelloWorld> helloWorlds = helloWorldMapper.findAll();
-//        List<User> users = userMapper.findAll();
-//        new SQL(){};
-        return "hello" + message;
+    @GetMapping("/{message}")
+    public List<User> hello(@PathVariable("message") String message) {
+        List<HelloWorld> helloWorlds = helloWorldMapper.findAll();
+        List<User> users = userMapper.findAll();
+        return users;
     }
 }

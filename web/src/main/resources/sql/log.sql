@@ -43,3 +43,62 @@ select count(*) from user;
 
 select substr('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 2, 1);
 
+show variables like '%slow%';
+
+set global slow_query_log = on;
+
+show variables like '%long%';
+
+set long_query_time = 1;
+
+select username, (
+    case sex when '0' then '女' when '1' then '男' else 'un' end
+) as '性别' from user;
+
+select (
+    if(sex = '0', '女', '男')
+) as '性别' from user;
+
+show create table user;
+
+show variables like '%char%';
+
+show variables like '%log_output%';
+
+select * from user order by user_id desc;
+
+select length(uuid());
+
+select uuid();
+
+show create table user;
+
+alter table user modify email varchar(128);
+
+select * from user where nickname != '';
+
+set @a = (select username from user limit 1, 1);
+
+select @a;
+
+call insert_data_news(3, @a);
+
+select @a;
+
+select 10 mod 4;
+
+select username from user limit 0, 1;
+
+select * from news;
+
+alter table news drop index ix_title;
+
+alter table news drop index uk_username;
+
+show index from news;
+
+select u.user_id, u.username, n.title, n.content from user u join news n using(username) order by u.user_id;
+
+select * from user;
+
+select * from news;

@@ -5,7 +5,6 @@ import xyz.lius.web.entity.HelloWorld;
 
 import java.util.List;
 
-@Mapper
 public interface HelloWorldMapper {
     @Select("select * from hello_world")
     @Results(id = "helloWorld", value = {

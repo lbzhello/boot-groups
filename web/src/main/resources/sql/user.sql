@@ -7,7 +7,7 @@ CREATE TABLE user
     password VARCHAR(32) NOT NULL COMMENT '密码',
     nickname VARCHAR(32) NOT NULL DEFAULT '' COMMENT '昵称',
     sex ENUM('0', '1') NOT NULL DEFAULT 1 COMMENT '性别',
-    email VARCHAR(32) NOT NULL DEFAULT '' COMMENT '邮箱',
+    email VARCHAR(128) NOT NULL DEFAULT '' COMMENT '邮箱',
     mobile_phone VARCHAR(16) NOT NULL DEFAULT '' COMMENT '手机号码',
     create_time DATETIME NOT NULL DEFAULT now() COMMENT '创建时间',
     update_time TIMESTAMP NOT NULL DEFAULT now() ON UPDATE now() COMMENT '更新时间',

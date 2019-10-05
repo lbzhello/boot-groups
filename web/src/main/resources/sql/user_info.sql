@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS user_info;
 
 CREATE TABLE user_info (
     user_info_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
-    user_id INT UNSIGNED NOT NULL COMMENT '用户 ID',
+    username INT UNSIGNED NOT NULL COMMENT '用户名',
     field_name VARCHAR(32) NOT NULL COMMENT '字段名',
     field_value VARCHAR(64) NOT NULL DEFAULT '' COMMENT '字段值',
     label VARCHAR(32) NOT NULL DEFAULT '' COMMENT '标签，用来标识一组相关的字段',

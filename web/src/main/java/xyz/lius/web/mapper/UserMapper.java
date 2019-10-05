@@ -5,7 +5,6 @@ import xyz.lius.web.entity.User;
 
 import java.util.List;
 
-@Mapper
 public interface UserMapper {
     List<User> findAll();
 }
