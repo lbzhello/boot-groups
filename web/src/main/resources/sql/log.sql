@@ -103,3 +103,32 @@ select * from user;
 
 select * from news;
 
+-- 2019-10-07 慢查询
+
+show variables like '%log%';
+
+show global status like '%slow_queries%';
+
+show variables like '%slow_query%';
+
+set global slow_query_log = off;
+
+show variables like '%long_query_time%';
+
+set long_query_time = 2;
+
+show variables like '%log_output%';
+
+set global log_output = 'file,table';
+
+select sleep(5);
+
+select * from mysql.slow_log;
+
+set global general_log = off;
+
+select * from user limit 1;
+
+select argument from mysql.general_log;
+
+select * from user;
