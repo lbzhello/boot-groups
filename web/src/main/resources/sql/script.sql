@@ -54,3 +54,13 @@ begin
        set n = n + 1;
    end while;
 end;
+
+
+-- ****************** trigger ********************
+
+drop trigger if exists `tri_insert_user`;
+delimiter ;;
+create trigger `tri_insert_user` after insert on `user` for each row begin
+
+end ;;
+delimiter ;

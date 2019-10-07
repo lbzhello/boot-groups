@@ -6,14 +6,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import xyz.lius.web.controller.HelloWorldController;
+import xyz.lius.web.controller.UserController;
 
 import java.util.HashMap;
 import java.util.Map;
 
 // 可以配置拦截指定的类或者包等
 // @RestControllerAdvice 使 @ExceptionHandler 注解的方法默认具有 @ResponseBody 注解
-@RestControllerAdvice(basePackageClasses = HelloWorldController.class)
+@RestControllerAdvice(basePackageClasses = UserController.class)
 public class AppExceptionHandlerAdvice {
 
     // 配置拦截的错误类型

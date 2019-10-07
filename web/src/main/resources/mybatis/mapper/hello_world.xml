@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.lius.web.mapper.HelloWorldMapper">
+    <resultMap id="HelloWorld" type="xyz.lius.web.entity.HelloWorld">
+    </resultMap>
+
+    <select id="findList" resultMap="HelloWorld">
+        select * from hello_world order by hello_world_id limit 10;
+    </select>
+</mapper>

@@ -24,7 +24,8 @@
         <module>test</module>
         <module>dubbo</module>
         <module>util</module>
-        <module>api</module>
+        <module>caiwei-api</module>
+        <module>service</module>
     </modules>
 
     <properties>
@@ -42,6 +43,8 @@
         <!-- dubbo -->
         <dubbo.version>2.7.3</dubbo.version>
         <curator.version>4.2.0</curator.version>
+
+        <mybatis.version>2.0.1</mybatis.version>
     </properties>
 
     <dependencies>

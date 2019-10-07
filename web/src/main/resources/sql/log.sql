@@ -102,3 +102,4 @@ select u.user_id, u.username, n.title, n.content from user u join news n using(u
 select * from user;
 
 select * from news;
+

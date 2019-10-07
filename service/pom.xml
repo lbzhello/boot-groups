@@ -3,31 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>dubbo</artifactId>
+        <artifactId>caiwei</artifactId>
         <groupId>caiwei</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-provider</artifactId>
+    <artifactId>service</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>user</module>
+    </modules>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo.version}</version>
+            <groupId>caiwei</groupId>
+            <artifactId>caiwei-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
+        <!-- 核心依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- provider 实现 api 接口 -->
         <dependency>
-            <groupId>caiwei</groupId>
-            <artifactId>dubbo-api</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
@@ -44,11 +49,17 @@
             <version>${curator.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
-<!--        <dependency>-->
-<!--            <groupId>com.101tec</groupId>-->
-<!--            <artifactId>zkclient</artifactId>-->
-<!--            <version>0.11</version>-->
-<!--        </dependency>-->
+        <!-- db -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
     </dependencies>
+
 </project>
