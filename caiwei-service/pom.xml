@@ -3,24 +3,37 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>dubbo</artifactId>
+        <artifactId>caiwei</artifactId>
         <groupId>caiwei</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-consumer</artifactId>
+    <artifactId>caiwei-service</artifactId>
+    <groupId>caiwei-service</groupId>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>user</module>
+    </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>caiwei</groupId>
+            <artifactId>caiwei-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- 核心依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>${dubbo.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
@@ -37,18 +50,17 @@
             <version>${curator.version}</version>
         </dependency>
 
-        <!-- consumer 引用 api 接口 -->
+        <!-- db -->
         <dependency>
-            <groupId>caiwei</groupId>
-            <artifactId>dubbo-api</artifactId>
-            <version>${project.version}</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
-<!--        <dependency>-->
-<!--            <groupId>com.101tec</groupId>-->
-<!--            <artifactId>zkclient</artifactId>-->
-<!--            <version>0.11</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
     </dependencies>
+
 </project>

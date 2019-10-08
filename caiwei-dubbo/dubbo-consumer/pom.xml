@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>dubbo</artifactId>
-        <groupId>caiwei</groupId>
+        <artifactId>caiwei-dubbo</artifactId>
+        <groupId>caiwei-dubbo</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-provider</artifactId>
+    <artifactId>dubbo-consumer</artifactId>
 
     <dependencies>
         <dependency>
@@ -21,13 +21,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- provider 实现 api 接口 -->
-        <dependency>
-            <groupId>caiwei</groupId>
-            <artifactId>dubbo-api</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
@@ -42,6 +35,13 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-recipes</artifactId>
             <version>${curator.version}</version>
+        </dependency>
+
+        <!-- consumer 引用 api 接口 -->
+        <dependency>
+            <groupId>caiwei-dubbo</groupId>
+            <artifactId>dubbo-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
