@@ -14,13 +14,13 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>user</module>
+        <module>user-service</module>
     </modules>
 
     <dependencies>
         <dependency>
-            <groupId>caiwei</groupId>
-            <artifactId>caiwei-api</artifactId>
+            <groupId>caiwei-api</groupId>
+            <artifactId>user-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 

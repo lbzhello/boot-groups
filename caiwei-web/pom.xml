@@ -13,8 +13,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>caiwei-service</groupId>
-            <artifactId>user</artifactId>
+            <groupId>caiwei-api</groupId>
+            <artifactId>user-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -43,6 +43,27 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- dubbo consumer -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-recipes -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
         </dependency>
     </dependencies>
 

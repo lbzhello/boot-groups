@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@EnableDubbo(scanBasePackages = "xyz.lius.web.controller")
+@EnableDubbo
 @ComponentScan("xyz.lius.web.controller")
 public class DubboConsumerConfig {
 }

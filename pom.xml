@@ -19,13 +19,14 @@
 
     <packaging>pom</packaging>
     <modules>
+        <module>caiwei-api</module>
+        <module>caiwei-service</module>
+        <module>caiwei-web</module>
+
         <module>caiwei-demo</module>
         <module>caiwei-test</module>
         <module>caiwei-dubbo</module>
         <module>caiwei-util</module>
-        <module>caiwei-api</module>
-        <module>caiwei-service</module>
-        <module>caiwei-web</module>
     </modules>
 
     <properties>
