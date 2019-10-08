@@ -1,9 +1,9 @@
-package xyz.lius.service.user.config;
+package xyz.lius.user.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("xyz.lius.service.user.mapper")
+@MapperScan("xyz.lius.user.mapper")
 public class MyBatisConfig {
 }

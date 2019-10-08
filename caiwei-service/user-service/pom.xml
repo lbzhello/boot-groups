@@ -11,5 +11,12 @@
 
     <artifactId>user-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>caiwei-api</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

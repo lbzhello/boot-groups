@@ -1,4 +1,4 @@
-package xyz.lius.service.user;
+package xyz.lius.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

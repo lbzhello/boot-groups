@@ -1,10 +1,10 @@
-package xyz.lius.service.user.service;
+package xyz.lius.user.service;
 
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import xyz.lius.api.user.User;
-import xyz.lius.api.user.UserService;
-import xyz.lius.service.user.mapper.UserMapper;
+import xyz.lius.user.User;
+import xyz.lius.user.UserService;
+import xyz.lius.user.mapper.UserMapper;
 
 import java.util.List;
 

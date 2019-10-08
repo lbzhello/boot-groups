@@ -1,10 +1,10 @@
-package xyz.lius.service.user.mapper;
+package xyz.lius.user.mapper;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import xyz.lius.api.user.User;
+import xyz.lius.user.User;
 
 import java.util.List;
 

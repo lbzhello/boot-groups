@@ -1,4 +1,4 @@
-package xyz.lius.service.user.config;
+package xyz.lius.user.config;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.context.annotation.Configuration;

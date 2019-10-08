@@ -1,4 +1,4 @@
-package xyz.lius.api.user;
+package xyz.lius.user;
 
 import java.util.List;
 
