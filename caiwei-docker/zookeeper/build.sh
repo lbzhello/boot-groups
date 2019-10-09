@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# author lbzhello@qq.com
+# create 2019-09-26
+# zookeeper docker 环境构建脚本
+
 workdir=/home/zookeeper
 zk_path=/opt/zookeeper
 mkdir -p ${zk_path}
