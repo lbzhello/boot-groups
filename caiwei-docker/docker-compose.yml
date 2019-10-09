@@ -25,3 +25,11 @@ services:
       - /d/data/mysql:/data/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 123456
+
+  web:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ../caiwei-react/build:/usr/share/nginx/html
+    ports:
+      - "80:80"

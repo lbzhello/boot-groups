@@ -54,3 +54,6 @@ HELP.md
 
 ### mvn ###
 .mvn
+
+### create-react-app ###
+node_modules
