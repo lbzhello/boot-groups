@@ -6,7 +6,7 @@ export function get(url) {
         console.log('GET' + " " + res.url + " " + res.status)
         console.log("content-type: " + res.headers.get("content-type"))
         return res.text()
-    }).then(res => console.log(res))
+    })
 }
 
 export function post(url, data) {

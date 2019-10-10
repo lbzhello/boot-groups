@@ -1,10 +1,7 @@
 package xyz.lius.web.controller;
 
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import xyz.lius.user.User;
 import xyz.lius.user.UserService;
 
@@ -12,6 +9,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+// credentials mode is 'include': origins 不能为 *, 且要指定 credentials 为 true
+@CrossOrigin(origins = {"http://127.0.0.1:3000"}, allowCredentials = "true")
 public class UserController {
 
     @Reference

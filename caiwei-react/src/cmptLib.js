@@ -21,42 +21,20 @@ const {Row, Col} = antd;
 
 const {List} = antd;
 
-const baseUrl = 'http://127.0.0.1'
+const baseUrl = 'http://127.0.0.1:8080/user'
 
 class MainPage extends React.Component {
   loadUser() {
-    rest.get(baseUrl)
+    let arr = []
+    let pro = rest.get(baseUrl)
+    pro.then(res =>{
+      arr = JSON.parse(res)
+    })
+    return arr
   }
 
   render() {
-    const data = [
-      {
-        title: 'Ant Design Title 1',
-        content: 'fsdfasdfasdfasdfas'
-      },
-      {
-        title: 'Ant Design Title 2',
-      },
-      {
-        title: 'Ant Design Title 3',
-      },
-      {
-        title: 'Ant Design Title 4',
-      },{
-        title: 'Ant Design Title 1',
-      },
-      {
-        title: 'Ant Design Title 2',
-      },
-      {
-        title: 'Ant Design Title 3',
-      },
-      {
-        title: 'Ant Design Title 4',
-      },
-    ];
-
-    console.log(this.loadUser())
+    const data = this.loadUser()
 
     return (
       <Layout>
@@ -89,10 +67,10 @@ class MainPage extends React.Component {
                       <List.Item>
                         <List.Item.Meta
                           avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                          title={<a href="https://ant.design">{item.title}</a>}
+                          title={<a href="https://ant.design">{item.username}</a>}
                           description="Ant Design, a design language for background applications, is refined by Ant UED Team"
                         />
-                        {item.content}
+                        {item.email}
                       </List.Item>
                     )}
                   />
