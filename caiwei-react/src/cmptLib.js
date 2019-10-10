@@ -3,6 +3,8 @@ import React from 'react';
 import * as antd from 'antd'
 import Grid from 'antd/lib/card/Grid';
 
+import * as rest from './restRequest'
+
 var Layout = antd.Layout, Menu = antd.Menu, Breadcrumb = antd.Breadcrumb;
 var Header = Layout.Header, Content = Layout.Content, Footer = Layout.Footer;
 
@@ -17,8 +19,45 @@ const { Meta } = Card;
 
 const {Row, Col} = antd;
 
+const {List} = antd;
+
+const baseUrl = 'http://127.0.0.1'
+
 class MainPage extends React.Component {
+  loadUser() {
+    rest.get(baseUrl)
+  }
+
   render() {
+    const data = [
+      {
+        title: 'Ant Design Title 1',
+        content: 'fsdfasdfasdfasdfas'
+      },
+      {
+        title: 'Ant Design Title 2',
+      },
+      {
+        title: 'Ant Design Title 3',
+      },
+      {
+        title: 'Ant Design Title 4',
+      },{
+        title: 'Ant Design Title 1',
+      },
+      {
+        title: 'Ant Design Title 2',
+      },
+      {
+        title: 'Ant Design Title 3',
+      },
+      {
+        title: 'Ant Design Title 4',
+      },
+    ];
+
+    console.log(this.loadUser())
+
     return (
       <Layout>
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
@@ -42,40 +81,21 @@ class MainPage extends React.Component {
             </Breadcrumb> */}
             <div style={{paddingTop: 20}}>
               <Row type="flex" justify="center" align="middle" gutter={16}>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-              </Row>
-            </div>
-            <div style={{paddingTop: 20}}>
-              <Row type="flex" justify="space-around" align="middle" gutter={16}>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-              </Row>
-            </div>
-            <div style={{paddingTop: 20}}>
-              <Row type="flex" justify="space-around" align="middle" gutter={16}>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-                <Col span={5}>
-                  <Panel></Panel>
-                </Col>
-                <Col span={5}>
-                  <Panel></Panel>
+                <Col span={20}>
+                  <List
+                    itemLayout="horizontal"
+                    dataSource={data}
+                    renderItem={item => (
+                      <List.Item>
+                        <List.Item.Meta
+                          avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                          title={<a href="https://ant.design">{item.title}</a>}
+                          description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                        />
+                        {item.content}
+                      </List.Item>
+                    )}
+                  />
                 </Col>
               </Row>
             </div>
@@ -85,6 +105,8 @@ class MainPage extends React.Component {
     )
   }
 }
+
+
 
 // 卡片
 class Panel extends React.Component {
