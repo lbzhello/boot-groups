@@ -24,18 +24,7 @@ const {List} = antd;
 const baseUrl = 'http://127.0.0.1:8080/user'
 
 class MainPage extends React.Component {
-  loadUser() {
-    let arr = []
-    let pro = rest.get(baseUrl)
-    pro.then(res =>{
-      arr = JSON.parse(res)
-    })
-    return arr
-  }
-
   render() {
-    const data = this.loadUser()
-
     return (
       <Layout>
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
@@ -60,20 +49,7 @@ class MainPage extends React.Component {
             <div style={{paddingTop: 20}}>
               <Row type="flex" justify="center" align="middle" gutter={16}>
                 <Col span={20}>
-                  <List
-                    itemLayout="horizontal"
-                    dataSource={data}
-                    renderItem={item => (
-                      <List.Item>
-                        <List.Item.Meta
-                          avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                          title={<a href="https://ant.design">{item.username}</a>}
-                          description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                        />
-                        {item.email}
-                      </List.Item>
-                    )}
-                  />
+                  <UserList></UserList>
                 </Col>
               </Row>
             </div>
@@ -84,7 +60,45 @@ class MainPage extends React.Component {
   }
 }
 
+class UserList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: []
+    }
+  }
 
+  loadUser() {
+    rest.get(baseUrl).then(res => {
+      this.setState({
+        data: JSON.parse(res)
+      })
+    })
+  }
+
+  componentDidMount() {
+    this.loadUser()
+  }
+
+  render() {
+    return (
+      <List
+        itemLayout="horizontal"
+        dataSource={this.state.data}
+        renderItem={item => (
+          <List.Item>
+            <List.Item.Meta
+              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+              title={<a href="https://ant.design">{item.username}</a>}
+              description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+            />
+            {item.email}
+          </List.Item>
+        )}
+      />
+    )
+  }
+}
 
 // 卡片
 class Panel extends React.Component {

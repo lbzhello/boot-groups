@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import MainPage from './cmptLib'
+
+import MainPage from './js/htmlUnit'
 
 function App() {
   return (
