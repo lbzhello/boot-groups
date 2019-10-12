@@ -5,15 +5,21 @@ import * as rest from './restRequest'
 const baseUrl = 'http://127.0.0.1:8080/user'
 
 class MainPage extends React.Component {
-  render() {
-    return (
-      <div>
-          <Navibar></Navibar>
-          <List></List>
-          <Table></Table>
-      </div>
-    )
-  }
+
+    render() {
+        return (
+          <div>
+              <Navibar></Navibar>
+              <div className="container-fluid">
+              <div className="row d-flex justify-content-center">
+                  <div className="col col-md-10">
+                      <UserList></UserList>
+                  </div>
+              </div>
+              </div>
+          </div>
+        )
+    }
 }
 
 class UserList extends React.Component {
@@ -37,17 +43,15 @@ class UserList extends React.Component {
     }
 
     render() {
+        let users = this.state.data
+        let userItems = users.map(user => {
+            return <Card key={user.userId} title={user.username}/>
+        })
+
         return (
-            <nav className="navbar navbar-dark">
-                <div>
-                    <form className="form-inline" role="search">
-                        <div className="form-group">
-                            <input type="text" className="form-control" placeholder="Search" />
-                        </div>
-                        <button type="submit" className="btn btn-default">提交按钮</button>
-                    </form>
-                </div>
-            </nav>
+            <div className="list-group list-group-flush">
+                {userItems}
+            </div>
         )
     }
 }
@@ -71,41 +75,43 @@ class Navibar extends React.Component {
     }
 }
 
-class List extends React.Component {
-    render() {
-        return (
-            <div className="list-group list-group-flush">
-                <li className="list-group-item">
-                    <div className="card mb-3">
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text">
-                                <small className="text-muted">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li className="list-group-item">
-                    <div className="card mb-3">
-                        <div className="card-header">Header</div>
-                        <div className="card-body">
-                            <h5 className="card-title">Info card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <p className="card-text">
-                                <small className="text-muted">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li className="list-group-item">Morbi leo risus</li>
-                <li className="list-group-item">Porta ac consectetur ac</li>
-                <li className="list-group-item">Vestibulum at eros</li>
+function Card(props) {
+    let header
+    let footer
+
+    if (props.header) {
+        header = (
+            <div className="card-header">
+                {props.header}
             </div>
         )
     }
+
+    if (props.footer) {
+        footer = (
+            <div className="card-footer">
+                {props.footer}
+            </div>
+        )
+    }
+
+
+    return (
+        <div className="card mb-3">
+            {header}
+            <div className="card-body">
+                <div className="card-title d-flex justify-content-between">
+                    <h5>{props.title || "Tourist"}</h5>
+                    <small className="text-muted">{props.date}</small>
+                </div>
+                <p className="card-text">{props.content}</p>
+                <p className="card-text">
+                    <small className="text-muted">last updated 3 mins ago</small>
+                </p>
+            </div>
+            {footer}
+        </div>
+    );
 }
 
 class Table extends React.Component {

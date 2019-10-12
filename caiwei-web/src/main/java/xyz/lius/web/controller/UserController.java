@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 // credentials mode is 'include': origins 不能为 *, 且要指定 credentials 为 true
-@CrossOrigin(origins = {"http://localhost:3000"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost", "http://127.0.0.1", "http://localhost:3000", "*"}, allowCredentials = "true")
 public class UserController {
 
     @Reference
