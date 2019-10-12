@@ -1,2 +1,2 @@
-xyz\lius\user\UserService.class
-xyz\lius\user\User.class
+xyz\lius\user\api\UserService.class
+xyz\lius\user\model\User.class

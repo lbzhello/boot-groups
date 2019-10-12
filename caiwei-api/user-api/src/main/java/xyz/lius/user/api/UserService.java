@@ -1,4 +1,6 @@
-package xyz.lius.user;
+package xyz.lius.user.api;
+
+import xyz.lius.user.model.User;
 
 import java.util.List;
 

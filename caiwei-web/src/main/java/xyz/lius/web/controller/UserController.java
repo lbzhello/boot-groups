@@ -2,8 +2,8 @@ package xyz.lius.web.controller;
 
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.*;
-import xyz.lius.user.User;
-import xyz.lius.user.UserService;
+import xyz.lius.user.model.User;
+import xyz.lius.user.api.UserService;
 
 import java.util.List;
 

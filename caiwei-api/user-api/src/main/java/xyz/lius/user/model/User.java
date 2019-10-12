@@ -1,4 +1,4 @@
-package xyz.lius.user;
+package xyz.lius.user.model;
 
 import java.io.Serializable;
 import java.util.Date;

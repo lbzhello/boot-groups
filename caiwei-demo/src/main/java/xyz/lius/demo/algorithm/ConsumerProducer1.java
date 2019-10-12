@@ -15,11 +15,11 @@ public class ConsumerProducer1 {
     public static void main(String[] args) {
         BlockingQueue<Integer> blockingQueue = new LinkedBlockingDeque<>(100);
 
-        xyz.lius.demo.algorithm.alibaba.ProducerA producerA = new xyz.lius.demo.algorithm.alibaba.ProducerA(blockingQueue);
+        ProducerA producerA = new ProducerA(blockingQueue);
 
-        xyz.lius.demo.algorithm.alibaba.ConsumerB consumerB = new xyz.lius.demo.algorithm.alibaba.ConsumerB(blockingQueue);
-        xyz.lius.demo.algorithm.alibaba.ConsumerC consumerC = new xyz.lius.demo.algorithm.alibaba.ConsumerC(blockingQueue);
-        xyz.lius.demo.algorithm.alibaba.ConsumerD consumerD = new xyz.lius.demo.algorithm.alibaba.ConsumerD(blockingQueue);
+        ConsumerB consumerB = new ConsumerB(blockingQueue);
+        ConsumerC consumerC = new ConsumerC(blockingQueue);
+        ConsumerD consumerD = new ConsumerD(blockingQueue);
 
         new Thread(producerA).start();
 
