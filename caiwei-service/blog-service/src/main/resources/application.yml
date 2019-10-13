@@ -1,0 +1,31 @@
+spring:
+  # 数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/liujin?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  type-aliases-package: xyz.lius.blog.entity
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+server:
+  # web服务端口，由于我们不需要使用web服务，所以将其设为随机端口
+  port: -1
+
+# dubbo provider
+dubbo:
+  protocol:
+    # dubbo服务端口，我们无需知道 dubbo 服务运行在哪个端口，故也将其设为随机端口
+    port: -1
+  application:
+    # dubbo 服务名称
+    name: blog-service
+  scan:
+    # dubbo 服务所在包路径
+    basePackages: xyz.lius.blog.service
+  registry:
+    # 注册中心地址
+    address: zookeeper://127.0.0.1:2181

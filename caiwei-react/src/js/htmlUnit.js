@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as rest from './restRequest'
 
-const baseUrl = 'http://127.0.0.1:8080/user'
+const baseUrl = 'http://127.0.0.1:8080/users'
 
 class MainPage extends React.Component {
 

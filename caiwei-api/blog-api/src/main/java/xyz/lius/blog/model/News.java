@@ -1,9 +1,10 @@
-package xyz.lius.news.model;
+package xyz.lius.blog.model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class News {
+public class News implements Serializable {
 
   private long newsId;
   private String title;

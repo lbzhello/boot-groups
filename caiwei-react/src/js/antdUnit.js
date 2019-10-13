@@ -21,7 +21,7 @@ const {Row, Col} = antd;
 
 const {List} = antd;
 
-const baseUrl = 'http://127.0.0.1:8080/user'
+const baseUrl = 'http://127.0.0.1:8080/users'
 
 class MainPage extends React.Component {
     render() {
@@ -29,23 +29,9 @@ class MainPage extends React.Component {
             <Layout>
                 <Header style={{position: 'fixed', zIndex: 1, width: '100%'}}>
                     <div className="logo"/>
-                    <Menu
-                        theme="dark"
-                        mode="horizontal"
-                        defaultSelectedKeys={['2']}
-                        style={{lineHeight: '64px'}}
-                    >
-                        <Menu.Item key="1">nav 1</Menu.Item>
-                        <Menu.Item key="2">nav 2</Menu.Item>
-                        <Menu.Item key="3">nav 3</Menu.Item>
-                    </Menu>
+                    <Navbar></Navbar>
                 </Header>
                 <Content style={{padding: '0 50px', marginTop: 64}}>
-                    {/* <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb> */}
                     <div style={{paddingTop: 20}}>
                         <Row type="flex" justify="center" align="middle" gutter={16}>
                             <Col span={24}>
@@ -56,6 +42,52 @@ class MainPage extends React.Component {
                 </Content>
                 <Footer style={{textAlign: 'center'}}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
+        )
+    }
+}
+
+class Navbar extends React.Component {
+    render() {
+        return (
+            <Menu
+                theme="dark"
+                mode="horizontal"
+                selectable={false}
+                style={{lineHeight: '64px'}}
+            >
+                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                        size={"large"}
+                        style={{ backgroundColor: '#ffffff', marginRight: 20 }}
+                />
+                <Search
+                    placeholder="input search text"
+                    onSearch={value => console.log(value)}
+                    style={{width: 250}}
+                />
+                <Menu.Item key="1" onClick={e => console.log(e)}><Icon type="home"/>主页</Menu.Item>
+                <Menu.Item key="2"><Icon type="fire"/>热点</Menu.Item>
+                <Menu.Item key="3"><Icon type="plus"/>发布</Menu.Item>
+                <Menu.SubMenu
+                    key="4"
+                    title={
+                        <span className="submenu-title-wrapper">
+                            <Icon type="setting" />
+                            setting
+                        </span>
+                    }
+
+                    style={{float: "right"}}
+                >
+                    <Menu.ItemGroup title="Item 1">
+                        <Menu.Item key="setting:1">Option 1</Menu.Item>
+                        <Menu.Item key="setting:2">Option 2</Menu.Item>
+                    </Menu.ItemGroup>
+                    <Menu.ItemGroup title="Item 2">
+                        <Menu.Item key="setting:3">Option 3</Menu.Item>
+                        <Menu.Item key="setting:4">Option 4</Menu.Item>
+                    </Menu.ItemGroup>
+                </Menu.SubMenu>
+            </Menu>
         )
     }
 }
