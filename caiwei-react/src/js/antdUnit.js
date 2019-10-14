@@ -21,21 +21,50 @@ const {Row, Col} = antd;
 
 const {List} = antd;
 
-const baseUrl = 'http://127.0.0.1:8080/users'
+const baseUrl = 'http://127.0.0.1:8080'
 
 class MainPage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            content: null
+        }
+    }
+
+    loadUsers() {
+        rest.get(baseUrl + "/users").then(res => {
+            this.setState({
+                content: <ArticleList dataSource={JSON.parse(res)}/>
+            })
+        })
+    }
+
+    loadArticles() {
+        rest.get(baseUrl + "/blog/articles").then(res => {
+            this.setState({
+                content: <ArticleList dataSource={JSON.parse(res)}/>
+            })
+        })
+    }
+
+    componentDidMount() {
+        this.loadUsers()
+    }
+
     render() {
+        let content = this.state.content
+
         return (
             <Layout>
                 <Header style={{position: 'fixed', zIndex: 1, width: '100%'}}>
                     <div className="logo"/>
-                    <Navbar></Navbar>
+                    <Navbar loadArticles={() => this.loadArticles()}></Navbar>
                 </Header>
                 <Content style={{padding: '0 50px', marginTop: 64}}>
                     <div style={{paddingTop: 20}}>
                         <Row type="flex" justify="center" align="middle" gutter={16}>
                             <Col span={24}>
-                                <ArticleList></ArticleList>
+                                {content}
                             </Col>
                         </Row>
                     </div>
@@ -64,11 +93,12 @@ class Navbar extends React.Component {
                     onSearch={value => console.log(value)}
                     style={{width: 250}}
                 />
-                <Menu.Item key="1" onClick={e => console.log(e)}><Icon type="home"/>主页</Menu.Item>
+                <Menu.Item key="1"><Icon type="home"/>主页</Menu.Item>
                 <Menu.Item key="2"><Icon type="fire"/>热点</Menu.Item>
-                <Menu.Item key="3"><Icon type="plus"/>发布</Menu.Item>
+                <Menu.Item key="3" onClick={() => this.props.loadArticles()}><Icon type="file-text"/>文章</Menu.Item>
+                <Menu.Item key="4"><Icon type="plus"/>发布</Menu.Item>
                 <Menu.SubMenu
-                    key="4"
+                    key="5"
                     title={
                         <span className="submenu-title-wrapper">
                             <Icon type="setting" />
@@ -93,27 +123,8 @@ class Navbar extends React.Component {
 }
 
 class ArticleList extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data: []
-        }
-    }
-
-    loadUser() {
-        rest.get(baseUrl).then(res => {
-            this.setState({
-                data: JSON.parse(res)
-            })
-        })
-    }
-
-    componentDidMount() {
-        this.loadUser()
-    }
-
     render() {
-        let users = this.state.data
+        let dataSource = this.props.dataSource
         const IconText = ({type, text}) => (
             <span>
                 <Icon type={type} style={{marginRight: 8}}/>
@@ -124,7 +135,7 @@ class ArticleList extends React.Component {
         return (
             <List
                 itemLayout="vertical"
-                dataSource={users}
+                dataSource={dataSource}
                 pagination={{
                     onChange: page => {
                         console.log(page);
@@ -151,10 +162,10 @@ class ArticleList extends React.Component {
                     >
                         <List.Item.Meta
                             avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
-                            title={<a href="https://ant.design">{item.username}</a>}
+                            title={<a href="https://ant.design">{item.title}</a>}
                             description="last 2 minutes ago"
                         />
-                        {item.email}
+                        {item.content}
                     </List.Item>
                 )}
             />
