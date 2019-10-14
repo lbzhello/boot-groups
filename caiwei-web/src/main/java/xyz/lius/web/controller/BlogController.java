@@ -4,19 +4,19 @@ import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.lius.blog.api.NewsService;
-import xyz.lius.blog.model.News;
+import xyz.lius.blog.api.ArticleService;
+import xyz.lius.blog.model.Article;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/blogs")
+@RequestMapping("/blog")
 public class BlogController {
     @Reference
-    private NewsService newsService;
+    private ArticleService articleService;
 
-    @GetMapping("/news")
-    public List<News> pageList() {
-        return newsService.findList();
+    @GetMapping("/articles")
+    public List<Article> pageList() {
+        return articleService.findList();
     }
 }

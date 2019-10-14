@@ -35,7 +35,7 @@ class MainPage extends React.Component {
                     <div style={{paddingTop: 20}}>
                         <Row type="flex" justify="center" align="middle" gutter={16}>
                             <Col span={24}>
-                                <NewsList></NewsList>
+                                <ArticleList></ArticleList>
                             </Col>
                         </Row>
                     </div>
@@ -92,7 +92,7 @@ class Navbar extends React.Component {
     }
 }
 
-class NewsList extends React.Component {
+class ArticleList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {

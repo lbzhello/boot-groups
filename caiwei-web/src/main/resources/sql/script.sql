@@ -37,19 +37,19 @@ BEGIN
     END WHILE;
 ENd;
 
-drop procedure if exists `insert_data_news`;
-create procedure `insert_data_news`(in num int)
+drop procedure if exists `insert_data_article`;
+create procedure `insert_data_article`(in num int)
 begin
    declare n int default 1;
-   declare uname varchar(32) default '';
+   declare author varchar(32) default '';
    declare i int default 0;
    while n < num do
        # 获取用户表前 10 个用户中的 ID
        set i = mod(n, 10);
-       select username into uname from user order by user_id limit i, 1;
+       select username into author from user order by user_id limit i, 1;
 
-       insert into news (title, content, username)
-       values (md5(rand()), uuid(), uname);
+       insert into article (title, content, author)
+       values (md5(rand()), uuid(), author);
 
        set n = n + 1;
    end while;

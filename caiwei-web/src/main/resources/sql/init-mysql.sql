@@ -5,10 +5,12 @@ call insert_data_user(10);
 
 ALTER TABLE user ENGINE = InnoDB;
 
--- 插入 news 表数据
+-- 插入 article 表数据
 
-alter table news engine = MyISAM;
+alter table article engine = MyISAM;
+alter table article disable keys;
 
-call insert_data_news(10);
+call insert_data_article(10);
 
-alter table news engine = InnoDB;
+alter table article engine = InnoDB;
+alter table article enable keys;

@@ -81,7 +81,7 @@ set @a = (select username from user limit 1, 1);
 
 select @a;
 
-call insert_data_news(3, @a);
+call insert_data_article(3, @a);
 
 select @a;
 
@@ -89,19 +89,19 @@ select 10 mod 4;
 
 select username from user limit 0, 1;
 
-select * from news;
+select * from article;
 
-alter table news drop index ix_title;
+alter table article drop index ix_title;
 
-alter table news drop index uk_username;
+alter table article drop index uk_username;
 
-show index from news;
+show index from article;
 
-select u.user_id, u.username, n.title, n.content from user u join news n using(username) order by u.user_id;
+select u.user_id, u.username, n.title, n.content from user u join article n using(username) order by u.user_id;
 
 select * from user;
 
-select * from news;
+select * from article;
 
 -- 2019-10-07 慢查询
 

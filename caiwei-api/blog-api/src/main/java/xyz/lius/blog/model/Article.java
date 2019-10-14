@@ -4,24 +4,24 @@ package xyz.lius.blog.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class News implements Serializable {
+public class Article implements Serializable {
 
-  private long newsId;
+  private long articleId;
   private String title;
   private String content;
-  private String username;
+  private String author;
   private String location;
   private int visible;
   private Date createTime;
   private Date updateTime;
 
 
-  public long getNewsId() {
-    return newsId;
+  public long getArticleId() {
+    return articleId;
   }
 
-  public void setNewsId(long newsId) {
-    this.newsId = newsId;
+  public void setArticleId(long articleId) {
+    this.articleId = articleId;
   }
 
 
@@ -43,12 +43,12 @@ public class News implements Serializable {
   }
 
 
-  public String getUsername() {
-    return username;
+  public String getAuthor() {
+    return author;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setAuthor(String author) {
+    this.author = author;
   }
 
 
