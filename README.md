@@ -64,7 +64,7 @@ docker-compose up -d
 1. git clone https://github.com/lbzhello/caiwei.git
 2. IDEA 打开 Maven 项目
 3. 启动 caiwei-service 下面的各个服务提供者。
-即各服务跟目录下命名 *ServiceApplication 的类。
+即各服务跟目录下名为 *ServiceApplication 的类。
 
 4. 启动 caiwei-web 根目录下的 WebApplication 类，作为服务消费者。
 默认端口 8080, api 可查看各 Controller。
