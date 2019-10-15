@@ -1,4 +1,22 @@
-# 采薇微服务系统(仅用于练手)
+# 采薇微服务系统
+
+## 项目结构
+
+```yaml
+caiwei
+  - caiwei-api 接口模块
+    - user-api 用户接口
+    - blog-api 博客接口
+    - ... ...
+  - caiwei-service 服务提供者
+    - user-service 用户服务
+    - blog-service 博客服务
+    - ... ...
+  - caiwei-web 服务消费者
+  - caiwei-docker docker 服务器环境搭建及配置
+  - caiwei-react react 前端
+  - ... 项目无关
+```
 
 ## 环境
 
@@ -71,21 +89,3 @@ yarn build
 ```
 
 访问 80 端口
-
-## 项目目录结构
-
-```yaml
-caiwei
-  - caiwei-api 接口模块
-    - user-api 用户接口
-    - blog-api 博客接口
-    - ... ...
-  - caiwei-service 各服务提供者
-    - user-service 用户服务
-    - blog-service 博客服务
-    - ... ...
-  - caiwei-web 服务消费者
-  - caiwei-docker docker 服务器环境搭建及配置
-  - caiwei-react react 前端
-  - ... 项目无关
-```
