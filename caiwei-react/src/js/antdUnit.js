@@ -1,25 +1,20 @@
 import React from 'react';
-// import {Layout, Header, Footer, Menu, Content, Breadcrumb, Button, Row, Col} from 'antd'
 import * as antd from 'antd'
-import Grid from 'antd/lib/card/Grid';
 
 import * as rest from './restRequest'
 
-var Layout = antd.Layout, Menu = antd.Menu, Breadcrumb = antd.Breadcrumb;
-var Header = Layout.Header, Content = Layout.Content, Footer = Layout.Footer;
 
-const {Form, Icon, Button, Checkbox} = antd;
+const {Layout, Menu} = antd;
+const {Header, Content, Footer} = Layout;
 
-var Input = antd.Input;
-var Search = Input.Search;
+const {Form, Input, Button, Checkbox} = antd;
+const Search = Input.Search;
 
-const {Card, Avatar} = antd;
-
+const {Card, Avatar, Icon} = antd;
 const {Meta} = Card;
 
-const {Row, Col} = antd;
+const {List, Row, Col} = antd;
 
-const {List} = antd;
 
 const baseUrl = 'http://127.0.0.1:8080'
 
@@ -75,15 +70,15 @@ class MainPage extends React.Component {
     }
 }
 
-class Navbar extends React.Component {
-    render() {
-        return (
-            <Menu
-                theme="dark"
-                mode="horizontal"
-                selectable={false}
-                style={{lineHeight: '64px'}}
-            >
+function Navbar(props) {
+    return (
+        <Menu
+            theme="dark"
+            mode="horizontal"
+            selectable={false}
+            style={{lineHeight: '64px'}}
+        >
+            <Menu.Item key="0">
                 <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
                         size={"large"}
                         style={{ backgroundColor: '#ffffff', marginRight: 20 }}
@@ -93,33 +88,33 @@ class Navbar extends React.Component {
                     onSearch={value => console.log(value)}
                     style={{width: 250}}
                 />
-                <Menu.Item key="1"><Icon type="home"/>主页</Menu.Item>
-                <Menu.Item key="2"><Icon type="fire"/>热点</Menu.Item>
-                <Menu.Item key="3" onClick={() => this.props.loadArticles()}><Icon type="file-text"/>文章</Menu.Item>
-                <Menu.Item key="4"><Icon type="plus"/>发布</Menu.Item>
-                <Menu.SubMenu
-                    key="5"
-                    title={
-                        <span className="submenu-title-wrapper">
+            </Menu.Item>
+            <Menu.Item key="1"><Icon type="home"/>主页</Menu.Item>
+            <Menu.Item key="2"><Icon type="fire"/>热点</Menu.Item>
+            <Menu.Item key="3" onClick={() => props.loadArticles()}><Icon type="file-text"/>文章</Menu.Item>
+            <Menu.Item key="4"><Icon type="plus"/>发布</Menu.Item>
+            <Menu.SubMenu
+                key="5"
+                title={
+                    <span className="submenu-title-wrapper">
                             <Icon type="setting" />
                             setting
                         </span>
-                    }
+                }
 
-                    style={{float: "right"}}
-                >
-                    <Menu.ItemGroup title="Item 1">
-                        <Menu.Item key="setting:1">Option 1</Menu.Item>
-                        <Menu.Item key="setting:2">Option 2</Menu.Item>
-                    </Menu.ItemGroup>
-                    <Menu.ItemGroup title="Item 2">
-                        <Menu.Item key="setting:3">Option 3</Menu.Item>
-                        <Menu.Item key="setting:4">Option 4</Menu.Item>
-                    </Menu.ItemGroup>
-                </Menu.SubMenu>
-            </Menu>
-        )
-    }
+                style={{float: "right"}}
+            >
+                <Menu.ItemGroup title="Item 1">
+                    <Menu.Item key="setting:1">Option 1</Menu.Item>
+                    <Menu.Item key="setting:2">Option 2</Menu.Item>
+                </Menu.ItemGroup>
+                <Menu.ItemGroup title="Item 2">
+                    <Menu.Item key="setting:3">Option 3</Menu.Item>
+                    <Menu.Item key="setting:4">Option 4</Menu.Item>
+                </Menu.ItemGroup>
+            </Menu.SubMenu>
+        </Menu>
+    )
 }
 
 class ArticleList extends React.Component {
