@@ -16,6 +16,7 @@
     <modules>
         <module>user-service</module>
         <module>blog-service</module>
+        <module>stock-service</module>
     </modules>
 
     <dependencies>
